@@ -12,15 +12,16 @@ driver = webdriver.Chrome("C:\Program Files (x86)\chromedriver.exe")
 
 driver.get("https://accstorefront.csz8zfle01-shoaltert1-d1-public.model-t.cc.commerce.ondemand.com/zh")
 driver.maximize_window()
-
-try:
-    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME,"btnCloseLarge" )))
-    element.click()
-    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "bannerTopCloseButton")))
-    element.click()
-    time.sleep(2)
-    element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'SuggestionSearch-input')))
-    element.send_keys('大街市')
-    element.send_keys('\ue007')
-except:
-    'driver.quit()'
+def the_market_test():
+    try:
+        element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME,"btnCloseLarge" )))
+        element.click()
+        element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "bannerTopCloseButton")))
+        element.click()
+        time.sleep(2)
+        element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, 'SuggestionSearch-input')))
+        element.send_keys('大街市')
+        element.send_keys('\ue007')
+    except:
+        'driver.quit()'
+the_market_test()
